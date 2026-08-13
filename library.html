@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6YTF87T8V0"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-6YTF87T8V0");
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Library | C&O Solutions</title>
+    <meta
+      name="description"
+      content="「株式会社C&Oソリューションズは、カフェ運営・月刊紙ねんど出版・おじさん派遣を通じ、ビジネスパーソンの孤独と業務効率化に不可解かつ確実なソリューションを提供します。」"
+    />
+    <!-- ビューポートの設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- ファビコン -->
+
+    <!--リセットcss-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Philosopher&display=swap"
+      rel="stylesheet"
+    />
+    <!-- サーバーUPしたらここに書く、今はおじさんカフェのアドレス
+    <meta
+      property="og:url"
+      content="https://nakataka274-beep.github.io/ojisan-cafe/library.html"
+    /> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Library | C&O Solutions" />
+    <meta
+      property="og:description"
+      content="「株式会社C&Oソリューションズは、カフェ運営・月刊紙ねんど出版・おじさん派遣を通じ、ビジネスパーソンの孤独と業務効率化に不可解かつ確実なソリューションを提供します。」"
+    />
+    <!--サーバーUPしたらここに書く、今はおじさんカフェのアドレス 
+    <meta
+      property="og:image"
+      content="https://nakataka274-beep.github.io/ojisan-cafe/images/outside.webp"
+    />
+ -->
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- 全ページ共通ヘッダー -->
+    <header class="page-header">
+      <div class="logo">
+        <a href="index.html">C&O Solutions</a>
+      </div>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html">TOP</a></li>
+          <li><a href="service.html">Service</a></li>
+          <li><a href="library.html">Library</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 各ページ差し替える（メイン）コンテンツ -->
+    <!-- メインコンテンツ -->
+    <main class="library-page">
+      <!-- サブカバー（タイトル表示エリア） -->
+      <div class="sub-cover">
+        <h2 class="page-title font-english">Library</h2>
+        <p>～手ざわりとロマンが宿る、新時代のガジェット特設ラウンジ～</p>
+      </div>
+
+      <div class="wrapper">
+        <div class="library-contents">
+          <!-- 【左側】メインエリア -->
+          <div class="library-main">
+            <div class="video-container">
+              <video
+                id="my-video"
+                src="videos/nendo-cm.mp4"
+                poster="images/cm-samune.png"
+                controls
+              >
+                動画を再生できません。
+              </video>
+            </div>
+
+            <!-- CMタイトルと説明文 -->
+            <div
+              style="
+                flex: 1;
+                padding-right: 20px;
+                display: flex;
+                flex-direction: column;
+              "
+            >
+              <h2
+                class="cm-title"
+                style="
+                  font-size: 1.5rem;
+                  font-weight: bold;
+                  margin: 0 0 10px 0;
+                  color: #26c7bf;
+                "
+              >
+                月刊 紙ねんど7月号CM
+              </h2>
+              <p
+                class="cm-text"
+                style="
+                  margin: 0;
+                  color: #555;
+                  line-height: 1.5;
+                  font-size: 0.95rem;
+                "
+              >
+                「スマホも忘れて、大人も夢中に。」
+                オフィスのワンシーンから、紙ねんどの常識を覆す新しい価値へとシフトする今月のCM。時間を忘れて没頭する、新時代のガジェットとしての側面をスタイリッシュに表現しました。
+                【今月の特集】
+                映像と連動し、造形のクオリティを高める「正しい首の伸ばし方」を解説。創造力を刺激するプロのテクニックを、動画と誌面にてご覧ください。
+              </p>
+            </div>
+            <!-- 【上段】左：粘土博士のプロフィール、右（赤□部分）：nenndohakase.jpg を楕円で表示 -->
+            <div
+              style="
+                display: flex;
+                gap: 20px;
+                margin-bottom: 30px;
+                align-items: stretch;
+              "
+            >
+              <!-- 粘土博士のプロフィール -->
+              <div
+                class="doctor-box"
+                style="
+                  flex: 1;
+                  background-color: #f9f9f9;
+                  padding: 20px;
+                  border-radius: 12px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                "
+              >
+                <h3
+                  style="
+                    font-size: 1rem;
+                    font-weight: bold;
+                    margin-bottom: 8px;
+                    color: #333;
+                    margin-top: 0;
+                  "
+                >
+                  ねんど博士<span
+                    style="
+                      font-size: 0.75rem;
+                      color: #666;
+                      font-weight: normal;
+                      margin-left: 5px;
+                    "
+                    >（Nendo Doctor）</span
+                  >
+                </h3>
+                <p
+                  style="
+                    font-size: 0.85rem;
+                    color: #555;
+                    line-height: 1.4;
+                    margin: 0;
+                  "
+                >
+                  長年、紙ねんどの可能性を追求し続ける研究者。今月の特集「五輪開幕！」では、ねんどの力で金メダル級の作品を生み出すコツを伝授！写真は父の友人のアルバート。
+                </p>
+              </div>
+
+              <!-- ★ここ（赤□の部分）：nenndohakase.jpg を楕円（丸）で表示する -->
+              <div
+                style="
+                  width: 150px;
+                  flex: 0 0 150px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <img
+                  src="images/nenndohakase.png"
+                  alt="粘土博士"
+                  style="
+                    width: 120px;
+                    height: 120px;
+                    object-fit: cover;
+                    object-position: center top;
+                    border-radius: 50%;
+                    display: block;
+                  "
+                />
+              </div>
+            </div>
+
+            <!-- 【下段】バックナンバー -->
+            <div class="back-numbers">
+              <div class="number-item">
+                <img src="images/no-4.png" alt="4月号" />
+                <p>4月号</p>
+              </div>
+              <div class="number-item">
+                <img src="images/no-5.png" alt="5月号" />
+                <p>5月号</p>
+              </div>
+              <div class="number-item">
+                <img src="images/no-6.png" alt="6月号" />
+                <p>6月号</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 【右側】サイドバーエリア -->
+          <aside
+            class="library-sidebar"
+            style="display: flex; flex-direction: column"
+          >
+            <div class="side-nav-group">
+              <ul class="side-menu">
+                <li><a href="shinkan.html">新刊案内</a></li>
+                <li><a href="gallery.html">紙ねんどギャラリー</a></li>
+                <li><a href="event.html">イベント</a></li>
+                <li><a href="voice.html">お客様の声</a></li>
+              </ul>
+            </div>
+            <!-- サイドバーの特別付録バナー -->
+            <div
+              style="
+                margin: 20px 0;
+                background: transparent;
+                padding: 0;
+                text-align: center;
+              "
+            >
+              <img
+                src="images/huroku.png"
+                alt="ふろく画像"
+                style="width: 100%; height: auto; display: block"
+              />
+            </div>
+
+            <!-- 今月の最新号 -->
+            <div
+              class="cover-august"
+              style="
+                background: transparent;
+                padding: 0;
+                text-align: center;
+                margin-top: auto;
+              "
+            >
+              <div
+                style="
+                  font-size: 0.85rem;
+                  font-weight: bold;
+                  color: #fff;
+                  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+                  padding: 6px 12px;
+                  border-radius: 20px;
+                  margin-bottom: 10px;
+                  display: inline-block;
+                  box-shadow: 0 2px 4px rgba(255, 65, 108, 0.3);
+                  letter-spacing: 0.05em;
+                "
+              >
+                🔥 今月の最新号
+              </div>
+              <img
+                src="images/no-8.png"
+                alt="8月号表紙"
+                style="
+                  width: 100%;
+                  display: block;
+                  border-radius: 6px;
+                  margin-bottom: 8px;
+                  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                "
+              />
+              <p
+                style="
+                  font-size: 0.95rem;
+                  font-weight: bold;
+                  color: #333;
+                  margin: 0;
+                "
+              >
+                8月号 最新刊
+              </p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+    <!-- 全ページ共通　フッター作成 -->
+    <footer class="page-footer">
+      <h3 class="heading-large font-english">Information</h3>
+      <table class="info">
+        <tr>
+          <th></th>
+          <td>株式会社C&Oソリューションズ（C&O Solutions Inc.）</td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td>〒107-0052 東京都港区赤坂9丁目 X-X-X ザ・タワーレジデンス 43F</td>
+        </tr>
+
+        <tr>
+          <th>電話</th>
+          <td>
+            03-XXXX-9999（受付時間：平日 10:00〜17:00 /
+            ※休日・祝日は設立記念日のため休み）
+          </td>
+        </tr>
+        <tr>
+          <th>メールアドレス</th>
+          <td>info@co-solutions-dummy.jp</td>
+        </tr>
+      </table>
+      <!-- コピーライト -->
+      <div class="copyright">
+        <small>&copy; 株式会社C&Oソリューションズ</small>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1720 @@
+@charset "UTF-8";
+
+/* 全体設定------------------------------*/
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family:
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+
+  line-height: 1.7;
+
+  color: #432;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* レイアウト */
+
+.wrapper {
+  max-width: 1120px;
+
+  margin: auto;
+
+  padding: 1.5rem;
+}
+
+.align-center {
+  text-align: center;
+}
+
+/* フォント指定 */
+
+.font-english {
+  font-family: "Philosopher", serif;
+
+  font-weight: normal;
+}
+
+/* ヘッダー 全体*/
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 20px;
+}
+
+.logo {
+  /* 【修正①】ロゴを大きく（210px → 280px） */
+
+  width: 280px;
+
+  font-size: 1.8rem;
+
+  font-weight: bold;
+}
+.main-nav {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 2.5rem;
+
+  font-size: 1.25rem;
+
+  list-style: none;
+}
+
+.main-nav a {
+  color: #432;
+}
+
+.main-nav a:hover {
+  color: #0bd;
+}
+
+/* メインコンテンツ領域 */
+
+.main-content {
+  max-width: 1200px;
+
+  margin: 40px auto;
+
+  padding: 0 20px;
+
+  min-height: calc(100vh - 200px);
+}
+
+/* --- TOPページ（index.html）用スタイル --- */
+
+/* 写真エリア全体 */
+
+.hero-section {
+  /* 【修正④】縮小時に上側が切れないよう position を top に変更 */
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("images/Gemini_Generated_Image_gtds4ugtds4ugtds\ \(2\).png");
+
+  background-size: cover;
+
+  background-position: top center;
+
+  padding: 60px 0;
+
+  margin-bottom: 40px;
+}
+
+.hero-inner {
+  position: relative;
+
+  min-height: 480px;
+
+  display: flex;
+
+  align-items: center;
+}
+
+/* 【修正②】写真に被っても文字が見えるよう白文字＋シャドウに変更 */
+
+.hero-title {
+  color: #ffffff;
+
+  text-shadow:
+    2px 2px 10px rgba(0, 0, 0, 0.7),
+    0 0 20px rgba(0, 0, 0, 0.5);
+
+  z-index: 2;
+}
+
+.hero-title h1 {
+  font-size: 3rem;
+
+  margin: 0;
+}
+
+.hero-title p {
+  font-size: 1.25rem;
+
+  font-weight: bold;
+
+  margin-top: 10px;
+}
+
+/* 【修正③】右上の会社沿革カード（半透明ぼかし・波線） */
+
+.history-card {
+  position: absolute;
+
+  top: 50%;
+
+  right: 0;
+
+  transform: translateY(-50%); /* 中央に配置 */
+
+  width: 380px;
+
+  /* 背景を半透明にして後ろをぼかす */
+
+  background-color: rgba(255, 255, 255, 0.75);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  padding: 25px;
+
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+
+  z-index: 2;
+}
+
+.history-card h3 {
+  font-size: 1rem;
+
+  color: #222;
+
+  border-bottom: 2px solid #222;
+
+  padding-bottom: 5px;
+
+  margin-bottom: 12px;
+}
+
+/* 会社概要との間に破線を入れる */
+
+.history-card h3.company-profile-title {
+  margin-top: 20px;
+
+  border-top: 2px dashed #999; /* 破線の区切り */
+
+  border-bottom: none;
+
+  padding-top: 15px;
+
+  padding-bottom: 0;
+}
+
+/* 沿革のリストスタイル */
+
+.history-list {
+  list-style: none;
+
+  padding: 0;
+
+  margin: 0;
+
+  font-size: 0.85rem;
+}
+
+.history-list li {
+  margin-bottom: 6px;
+
+  line-height: 1.4;
+
+  color: #333;
+}
+
+.history-list li span {
+  font-weight: bold;
+
+  margin-right: 8px;
+
+  color: #000;
+}
+
+/* 会社概要のテーブルスタイル */
+
+.company-profile-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  font-size: 0.8rem;
+
+  line-height: 1.5;
+
+  margin-top: 10px;
+}
+
+.company-profile-table tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.company-profile-table tr:last-child {
+  border-bottom: none;
+}
+
+.company-profile-table th,
+.company-profile-table td {
+  padding: 6px 2px;
+
+  vertical-align: top;
+
+  color: #333;
+}
+
+.company-profile-table th {
+  text-align: left;
+
+  width: 35%;
+
+  font-weight: bold;
+}
+
+.company-profile-table td {
+  text-align: left;
+
+  width: 65%;
+}
+
+/* ==========================================
+
+   【新規】レスポンシブ対応（画面が狭くなった時）
+
+   ========================================== */
+
+@media (max-width: 960px) {
+  .hero-inner {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    min-height: auto;
+  }
+
+  /* タイトルを写真の上に載せる */
+
+  .hero-title {
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    width: 100%;
+  }
+
+  /* 画面が狭くなったら絶対配置を解除して下に落とす */
+
+  .history-card {
+    position: static;
+
+    transform: none;
+
+    width: 100%;
+
+    margin-top: 20px;
+
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  /* --- 共通ヘッダーの調整 --- */
+  .page-header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* --- 共通フッターの調整 --- */
+  .page-footer {
+    padding: 20px 15px; /* フッター全体の余白をスッキリさせる */
+  }
+  .page-footer .info {
+    width: 100%; /* テーブルを画面幅いっぱいにする */
+  }
+  .page-footer .info th,
+  .page-footer .info td {
+    display: block; /* 項目（「住所」など）と内容を縦並びにしてはみ出しを防ぐ */
+    width: 100%;
+    box-sizing: border-box;
+  }
+  /* Serviceページの左右の横並びを解除して縦に並べる */
+  .service-wrapper {
+    flex-direction: column;
+    display: flex;
+  }
+
+  /* 左側のカフェ紹介エリアの幅を100%にする */
+  .service-left {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+
+  /* 右側のおじさんカード一覧（グリッド）を1列または2列にする */
+  .service-right {
+    grid-template-columns: 1fr !important; /* スマホなら1列に並べる場合 */
+  }
+  /* 一番下の下段ボックスたちも縦1列にする */
+  .cafe-desc-box {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  /* Serviceページの左右の横並びを解除 */
+  .service-wrapper {
+    flex-direction: column;
+    display: flex;
+  }
+
+  /* 左側のカフェ紹介の幅を100%にする */
+  .service-left {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+
+  /* 右側のエリア全体も幅100%にする */
+  .service-right {
+    width: 100% !important;
+  }
+
+  /* 下段のすべてのボックス（アクセス・料金表・求人など）の幅と高さをきれいに揃える */
+  .cafe-desc-box {
+    width: 100% !important;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+  }
+  /* 下段ボックスの幅とレイアウトを強制的に揃える */
+  .service-right .cafe-desc-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  /* 下段ボックスのレイアウトを完全にスマホ用にリセットする */
+  .service-right {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .service-right .cafe-desc-box {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+    box-sizing: border-box !important;
+    margin: 0 0 20px 0 !important;
+  }
+  /* Libraryページの左右の横並びを解除して縦に並べる */
+  .library-contents {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  /* メインエリアとサイドバーの幅を100%にする */
+  .library-main,
+  .library-sidebar {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* 粘土博士のプロフィールと丸い写真の横並びも縦に積む */
+  .library-main > div[style*="display: flex"] {
+    flex-direction: column !important;
+  }
+  /* Informationセクション（住所と地図）を縦並びにする */
+  .location {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .location-info,
+  .location-map {
+    width: 100% !important;
+  }
+
+  /* 下段のSNSセクション（3列並び）を縦並びにする */
+  .sns {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .sns-item {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
+
+/* 2. プロフィールエリア */
+
+.profile-section {
+  margin-bottom: 40px; /* 下部ギャラリーとの間隔を適切に確保 */
+}
+
+.profile-card {
+  width: 100%;
+
+  background-color: #f4f4f4;
+
+  padding: 40px; /* メッセージが引き立つよう余白を広げました */
+
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+/* 「—思い付き—が、世界を救う。」 */
+
+.message-title {
+  font-size: 1.6rem;
+
+  color: #333;
+
+  margin-bottom: 25px;
+
+  text-align: center;
+}
+
+/* 代表挨拶 本文 */
+
+.message-body p {
+  margin-bottom: 1.5rem;
+
+  font-size: 0.95rem;
+}
+
+.message-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* 代表の署名 */
+
+.ceo-signature {
+  text-align: right;
+
+  font-weight: bold;
+
+  margin-top: 20px;
+
+  font-size: 1rem !important;
+}
+
+/* 区切り線 */
+
+.profile-divider {
+  border: 0;
+
+  border-top: 1px solid #ccc;
+
+  margin: 30px 0;
+}
+
+/* プロフィール詳細 */
+
+.biography-title {
+  font-size: 1.2rem;
+
+  margin-bottom: 10px;
+
+  color: #432;
+}
+
+.ceo-post {
+  font-size: 0.9rem;
+
+  font-weight: bold;
+
+  color: #666;
+
+  margin-bottom: 10px;
+}
+
+.biography-body {
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}
+
+/* 3. 社内風景ギャラリー */
+
+.gallery {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 60px;
+}
+
+.gallery-item {
+  flex: 1;
+}
+
+.gallery-item img {
+  width: 100%;
+
+  height: auto;
+
+  border-radius: 8px;
+
+  margin-bottom: 10px; /* 画像と説明文の間に隙間を確保 */
+}
+
+.gallery-item p {
+  font-size: 0.85rem;
+
+  line-height: 1.5;
+
+  color: #555;
+}
+
+/* Service ページ用スタイル */
+
+/* タイトルエリア */
+
+.sub-cover {
+  color: #d4af37; /* ゴールド */
+  background-color: #1b3b2b; /* 深緑 */
+  text-align: center;
+  padding: 30px 0;
+  margin-bottom: 40px;
+}
+
+/* 全体を左右に分ける親コンテナ（ここを新しく作ります） */
+.service-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* 【左側】大きなカフェカード（縦長に固定する箱） */
+.service-left {
+  width: 280px;
+  flex-shrink: 0;
+  background-color: #e2d2d2;
+  padding: 20px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* 左側の画像：ここで縦の長さを自由に指定できます（例: 550px） */
+.service-left .cafe-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.service-left .cafe-title {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* 【右側】おじさんカードや下段ボックスの3列グリッド */
+.service-right {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 右側のカード共通 */
+.service-right .item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.service-right .item p {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.85rem;
+}
+
+.cafe-rule {
+  font-size: 0.9rem;
+}
+
+/* 【右側】おじさんカード共通 */
+
+.service-grid .item img {
+  width: 100%;
+
+  height: auto;
+
+  border-radius: 4px;
+}
+
+.service-grid .item p {
+  text-align: center;
+
+  margin-top: 5px;
+
+  font-size: 0.85rem;
+}
+/* 右側のグリッドに入るカード（おじさんカードも下段ボックスも共通）のサイズ制御 */
+.service-right .item {
+  box-sizing: border-box;
+}
+
+/* 下段のテキストボックスがグリッドの枠を崩さないようにする */
+.service-right .cafe-desc-box {
+  background-color: #f9f9f9; /* お好みで背景色 */
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  height: 100%; /* グリッドの高さ一杯に合わせる */
+  box-sizing: border-box;
+}
+
+.service-right .cafe-desc-box .cafe-rule-title {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+/* ==========================================
+
+   Library ページ用スタイル
+
+   ========================================== */
+
+/* 2カラムのレイアウト */
+
+.library-contents {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 60px;
+}
+
+/* 【左側】メインエリア */
+
+.library-main {
+  width: 55%;
+}
+
+/* 動画を囲む親ボックス（iframeの時の設定を流用） */
+/* 動画を囲む親ボックス（ここはそのまま） */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 の比率 */
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* 動画とサムネイル画像を重ねる設定（ここを少し追加） */
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 再生中に画像を隠すためのクラス（これがないと画像が消えません） */
+.is-hidden {
+  display: none !important;
+}
+.cm-title {
+  font-size: 1.2rem;
+
+  margin-top: 15px;
+}
+
+.cm-text {
+  color: #666;
+
+  margin-bottom: 30px;
+}
+
+.cover-august {
+  margin-top: 20px;
+
+  text-align: right;
+}
+
+.cover-august img {
+  border-radius: 8px;
+}
+
+.cover-august p {
+  font-weight: bold;
+
+  margin-top: 5px;
+}
+
+/* 【右側】サイドバーエリア */
+
+.library-sidebar {
+  width: 40%;
+
+  display: flex;
+
+  flex-direction: column; /* 上段と下段（バックナンバー）を縦に並べる */
+}
+
+/* 上段（Nav ＋ ふろくバナー） */
+
+.sidebar-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 30px;
+}
+
+.side-nav-group {
+  flex: 1;
+}
+
+.side-menu {
+  list-style: none;
+
+  padding: 0;
+
+  margin-bottom: 20px;
+}
+
+.side-menu li {
+  margin-bottom: 8px;
+}
+
+.side-menu a {
+  display: block;
+
+  background-color: #26c7bf;
+
+  padding: 8px 12px;
+
+  border-radius: 20px;
+
+  text-decoration: none;
+
+  color: #333;
+
+  text-align: center;
+
+  font-size: 0.85rem;
+}
+
+.side-menu a:hover {
+  color: rgb(199, 4, 166);
+}
+
+/* 特別ふろく 縦長バナー */
+
+/* バナー枠のスタイル */
+/* ふろくバナーの枠全体 */
+/* 特別ふろく 縦長バナー */
+/* 特別ふろくバナーの背景を白くする（修正版） */
+.furoku-banner-image {
+  /* ここで枠全体を白くする */
+
+  /* ★ここを 220px から小さくします（例：150px） */
+  width: 150px !important;
+  /* ★flexの設定も合わせて調整します */
+  flex: 0 0 150px !important;
+  background-color: #ffffff !important;
+  /* 枠の中の画像設定 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 中の画像自体も背景を白にする */
+.furoku-banner-image img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  /* 画像自体の背景を白に設定（透過防止） */
+  background-color: #ffffff !important;
+}
+/* 枠の中の画像サイズを綺麗に合わせる */
+.furoku-banner img {
+  width: 100%; /* バナー枠いっぱいに広げる */
+  height: auto; /* 縦横比を維持 */
+  display: block;
+  border-radius: 8px;
+}
+/* 下段（バックナンバー3つ並び） */
+
+.back-numbers {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: auto; /* 下端を揃える */
+}
+
+.number-item {
+  text-align: center;
+
+  flex: 1;
+}
+
+.number-item img {
+  width: 100%;
+
+  height: auto;
+
+  border-radius: 8px;
+}
+
+.number-item p {
+  font-size: 0.85rem;
+
+  margin-top: 5px;
+}
+/* 上段のボックス（博士とふろく）のレイアウト調整 */
+.library-contents .section-top {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: flex-start; /* 縦の中央を揃える */
+}
+
+.library-contents .doctor-box {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* 上段の横並び設定 */
+.library-contents .section-top {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: stretch;
+}
+
+/* プロフィール枠 */
+.library-contents .doctor-box {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.doctor-name {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.doctor-name span {
+  font-size: 0.75rem;
+  color: #666;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.doctor-desc {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* ふろくバナー（博士の写真を重ねる親要素） */
+.furoku-banner-image {
+  position: relative; /* 写真を重ねるための基準 */
+  width: 150px !important;
+  flex: 0 0 150px !important;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.furoku-main-img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* ふろくの上に重ねる粘土博士の写真 */
+.doctor-badge-img {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 40px; /* お好みに合わせて調整してください */
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* 動画の右横に置く粘土博士の写真の調整 */
+.doctor-photo-right img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-left: 15px;
+}
+/* 2カラム全体の基本設定 */
+.library-contents {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.library-main {
+  flex: 1;
+}
+
+.library-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+/* 1. 動画の横のエリア（CMタイトル説明 ＋ 粘土博士の写真） */
+.library-main > div:first-of-type + div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+/* 2. 上段（左：プロフィール、右：ふろくバナー） */
+.library-contents .section-top,
+.library-main > div:nth-of-type(3) {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+  align-items: stretch;
+}
+
+/* 粘土博士のプロフィール枠 */
+.library-main .doctor-box {
+  flex: 1;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3. 下段バックナンバー（4, 5, 6月号）の横並び */
+.back-numbers {
+  display: flex;
+  gap: 15px;
+}
+
+.back-numbers .number-item {
+  flex: 1;
+  text-align: center;
+}
+
+.back-numbers .number-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 4. サイドバーのふろくバナー・8月号の調整 */
+.library-sidebar img {
+  border-radius: 8px;
+}
+/* サイドバー全体をフレックスボックスにしてボトムを綺麗に揃える */
+.library-contents {
+  display: flex;
+  gap: 30px;
+  align-items: stretch; /* 左右の高さの基準を揃える */
+}
+
+.library-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 上下に適度に散らしてボトムを合わせる */
+}
+/* 青〇部分の粘土博士の写真を綺麗な楕円（丸型）にする設定 */
+.library-contents .furoku-banner-image img:last-child,
+.library-main img[alt="粘土博士の写真"] {
+  border-radius: 50% !important; /* 正円にしたい場合は50%、少し横長の楕円にしたい場合は 50% / 30% などに調整できます */
+  width: 50px !important;
+  height: 50px !important;
+  object-fit: cover !important;
+}
+
+/* プロフィール内または指定箇所の博士の写真を綺麗な楕円（丸型）にする */
+.doctor-box img,
+.library-main img[alt*="粘土博士"] {
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* もし博士の写真に特定のクラスや画像パスがある場合はこちらでも適用されます */
+.library-main img[src*="doctor"] {
+  border-radius: 50% !important;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+/* ==========================================
+
+   Contact ページ用スタイル
+
+   ========================================== */
+
+.contact-contents {
+  margin-bottom: 60px;
+}
+
+/* 上段：Information & Map (2カラム) */
+
+.location {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  margin-bottom: 50px;
+
+  align-items: flex-start;
+}
+
+.location-info {
+  background-color: #fafafa;
+  padding: 25px;
+  border-radius: 12px;
+  border-left: 4px solid #1b3b2b; /* ブランドカラーのアクセント線 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+.location-info .info th {
+  width: 20%; /* 項目名の幅を確保 */
+  white-space: nowrap; /* 「住所」「電話」が勝手に改行されないようにする */
+  vertical-align: top;
+  padding: 8px 10px 8px 0;
+  font-weight: bold;
+}
+.location-info .info td {
+  width: 80%;
+  vertical-align: top;
+  padding: 8px 0;
+}
+.location-map {
+  width: 50%;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+}
+
+/* 中段：Contact カード（中央寄せの灰色枠） */
+
+.contact-card {
+  background-color: #94b9a2 !important; /* 薄いピンクの背景色を強制適用 */
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+/* 「Contact」の見出しとボタンだけは中央に戻す */
+.contact-card h3,
+.contact-card .align-center {
+  text-align: center;
+}
+
+/* 本文の間に適度な余白をつける */
+.contact-card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+.btn {
+  display: inline-block;
+  font-size: 1.5rem;
+  background-color: rgb(79, 83, 83);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  transition: 1s;
+}
+.btn:hover {
+  background-color: #f300aa;
+  scale: 1.2 1.5 1.2;
+  rotate: -1440deg;
+  translate: 0 -430px;
+}
+
+/* 下段：SNS 3列並び */
+
+.sns {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.sns-item {
+  flex: 1;
+
+  text-align: center;
+}
+
+.sns-item h3 {
+  margin-bottom: 15px;
+}
+
+/* YouTubeのレスポンシブ枠 */
+
+.sns-youtube-box {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 9;
+
+  border-radius: 8px;
+
+  overflow: hidden;
+  background-color: #000;
+}
+
+.sns-youtube-box video {
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==========================================
+
+   消えてしまった共通パーツの復旧・修復コード
+
+   ========================================== */
+
+/* ヘッダー全体の重なりを修正 */
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 20px;
+
+  position: relative;
+
+  z-index: 10;
+
+  background-color: #ffffff;
+}
+
+/* メイン写真エリアの配置と高さを復旧 */
+
+.hero-section {
+  width: 100%;
+
+  padding: 0;
+
+  margin-bottom: 40px;
+
+  clear: both;
+
+  background-position: center !important; /* 顔が切れないように中央基準 */
+}
+
+.hero-inner {
+  position: relative;
+
+  min-height: 550px; /* 写真の縦幅をしっかり確保 */
+
+  max-width: 1120px;
+
+  margin: 0 auto;
+
+  padding: 1.5rem;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+/* 消えていた共通フッターの記述を完全復旧 */
+
+.page-footer {
+  background-color: #222222;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  padding: 40px 20px;
+
+  margin-top: 50px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  clear: both;
+}
+
+/* フッターの見出し（Information） */
+
+.page-footer .heading-large {
+  font-size: 1.8rem;
+
+  margin-bottom: 20px;
+
+  color: #ffffff;
+}
+
+/* フッターの会社情報テーブル */
+
+.page-footer .info {
+  margin: 0 auto 20px auto;
+
+  border-collapse: collapse;
+}
+
+.page-footer .info th,
+.page-footer .info td {
+  padding: 8px 15px;
+
+  font-size: 0.95rem;
+
+  color: #ffffff;
+}
+
+.page-footer .info th {
+  text-align: right;
+
+  font-weight: bold;
+}
+
+.page-footer .info td {
+  text-align: left;
+}
+
+/* コピーライト */
+
+.page-footer small {
+  display: block;
+
+  font-size: 0.8rem;
+
+  color: #aaaaaa;
+
+  margin-top: 15px;
+}
+/* TOPページのヘッダー（帯）だけに色を付ける */
+.top-header {
+  background-color: #b9f1ea; /* 爽やかな薄いブルー（お好みの色に変えてもOKです） */
+  width: 100%;
+  box-sizing: border-box;
+}
+/* もしヘッダーの中に中央寄せ用のラッパーがある場合、中身を中央に配置する調整 */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100% !important; /* 幅制限を解除して画面いっぱいに */
+  padding-left: 5%;
+  padding-right: 5%;
+  box-sizing: border-box;
+}
+/* 下層ページの共通サブカバー */
+.sub-cover {
+  background-color: #1b3b2b; /* 深緑 */
+  color: #c5a059; /* ゴールドの文字色 */
+  width: 100%; /* 画面の端から端まで広げる */
+  padding: 40px 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.sub-cover h2 {
+  font-size: 28px;
+  margin: 0 0 10px 0; /* タイトルとサブコピーの間隔を空ける */
+}
+
+.sub-cover p {
+  font-size: 14px;
+  margin: 0;
+  color: #d4b87a; /* サブコピーは少しだけトーンを落としたゴールドにしても綺麗です */
+}
+/* おじさんカードの写真の大きさを完全に統一するCSS */
+.service-card img,
+.ojisan-card img {
+  width: 200px; /* 幅を200pxに固定 */
+  height: 200px; /* 高さを200pxに固定 */
+  object-fit: cover; /* 画像が歪まないように自動でトリミングして枠に合わせる */
+}
+/* 写真の部分（カードの上半分）だけを高さ固定する */
+.service-card-image {
+  width: 200px;
+  height: 200px; /* ここで写真の枠の高さを強制固定 */
+  overflow: hidden; /* はみ出た部分は隠す */
+}
+
+/* 写真自体はその枠いっぱいに広げる */
+.service-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 枠に合わせてキレイにトリミング */
+}
+/* 右側の3列グリッド全体の設定 */
+.service-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3列に並べる */
+  gap: 20px; /* カード同士の隙間 */
+}
+
+/* 個別のおじさんカード（item）の設定 */
+.service-right .item {
+  display: flex;
+  flex-direction: column; /* 上から下に要素を並べる */
+}
+
+/* 写真の大きさを完全に固定する */
+.service-right .item img {
+  width: 100%;
+  height: 200px; /* 高さを200pxに強制固定 */
+  object-fit: cover; /* 歪まないように自動トリミング */
+  display: block;
+}
+
+/* テキスト部分が短くても、カードの高さを揃えたい場合（オプション） */
+.service-right .item p {
+  margin-top: 10px;
+  flex-grow: 1; /* 余った高さをテキストエリアに埋めさせる */
+}
+.service-right .item img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain; /* ここを cover から contain に変える！ */
+  background-color: #f0f0f0; /* オプション：余白部分に色をつけたい場合 */
+}
+* --- 下段の3つのボックスを右側の3列グリッドに綺麗に合わせる修正 --- */
+
+/* 右側のエリア全体を3列のグリッドにする（もし既に定義していればそのままでOKです） */
+.service-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 一番下にある3つのボックス（例として .bottom-box としています）を、それぞれ1列分ずつ綺麗に収める */
+.service-right .bottom-box {
+  grid-column: span 1; /* 1列分の幅にする */
+}
+/* --- 下段のボックス（カフェ説明や準備中など）の崩れを直すCSS --- */
+.service-right .cafe-desc-box {
+  height: auto; /* 高さを固定せず、中身の文章量に合わせる */
+  background: #fdfbf7; /* お好みに合わせて背景色（今の薄い茶色系）を指定 */
+  padding: 20px; /* 内側の余白 */
+  border-radius: 8px; /* 角を少し丸くする（お好みで） */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 下段ボックスの中にある余計なimgタグの影響を消す（もしあれば） */
+.service-right .cafe-desc-box img {
+  display: none;
+}
+/* 下段の最初のボックス（7番目の要素）から、強制的に改行させて左端に配置する */
+.service-right .item:nth-child(7) {
+  grid-column: 1; /* 次の行の1列目からスタートさせる */
+}
+/* 1. 右側の全体を3列のグリッドにする */
+.service-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 2. おじさんカード（1〜6番目）の高さや見た目の指定 */
+.service-right .item:nth-child(-n + 6) img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* 3. 一番下の3つのボックス（7, 8, 9番目）を強制的に3行目に配置する */
+.service-right .item:nth-child(7),
+.service-right .item:nth-child(8),
+.service-right .item:nth-child(9) {
+  grid-row: 3; /* 3行目に強制固定する */
+  height: auto; /* 高さを固定解除してテキストを綺麗に見せる */
+  background: #fdfbf7;
+  padding: 20px;
+  border-radius: 8px;
+}
+/* 1. 右側全体を3列のグリッドにする */
+.service-right {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* 2. おじさんカード（1〜6番目）のレイアウト */
+.service-right .item:nth-child(-n + 6) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* おじさんの写真（1〜6番目の中にある画像）だけを綺麗に200×200の枠に収める */
+.service-right .item:nth-child(-n + 6) img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* ここで綺麗に四角く収める */
+  display: block;
+}
+
+/* 3. 一番下の3つのボックス（7, 8, 9番目）は3行目に固定して、テキストを綺麗に表示する */
+.service-right .item:nth-child(7),
+.service-right .item:nth-child(8),
+.service-right .item:nth-child(9) {
+  grid-row: 3;
+  height: auto;
+  background: #fdfbf7;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+/* カード内のテキスト部分のクラスに対して指定 */
+.card-content,
+.item p {
+  text-align: left; /* 左揃えにする */
+}
+/* service-rightの中にあるすべてのitem内のテキストを強制的に左揃えにする */
+.service-right .item,
+.service-right .item p,
+.service-right .item h3,
+.card-content {
+  text-align: left !important;
+}
+/* 一番下の3つのボックス共通のスタイル */
+.service-right .cafe-desc-box,
+.service-right .item:nth-child(n + 7) {
+  display: flex;
+  flex-direction: column;
+}
+
+/* タイトル部分の高さを強制的に2行分で固定する（これで下の文章の開始位置が完全に揃います） */
+.service-right .cafe-desc-box p.cafe-rule-title,
+.service-right .item:nth-child(n + 7) h3,
+.service-right .item:nth-child(n + 7) strong {
+  min-height: 3.2em; /* タイトルの高さを確保 */
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+/* 下段ボックス全体をFlexboxにする */
+.cafe-desc-box {
+  display: flex;
+  flex-direction: column;
+}
+
+/* タイトル部分の高さを2行分に固定して、タイトルの長さによるズレをなくす */
+.cafe-desc-box .cafe-rule-title {
+  height: 3.6em; /* 2行分の高さを確保（環境に合わせて3em〜4emで調整してください） */
+  display: flex;
+  align-items: center; /* 垂直方向の中央に配置 */
+}
+/* 下段の3つのボックス共通 */
+.cafe-desc-box {
+  display: block !important;
+}
+
+/* タイトル部分のエリアの高さを強制的に固定する（2行分の高さを確保） */
+.cafe-desc-box .cafe-rule-title {
+  height: 50px !important; /* ここで高さを強制固定。もし足りなければ 60px などに調整してください */
+  line-height: 1.2;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* 外側の枠（代表挨拶の .profile-section と共通の動き） */
+/* 外枠：ぼかしが途中でカットされないように overflow を除外し、上下余白を確保 */
+.concept-section {
+  margin: 60px auto; /* 上下のマージンを少し広げる */
+  overflow: visible !important; /* ぼかしが外にはみ出してもカットさせない */
+}
+
+/* カード本体：上側にぼかしが広がるスペースを作る */
+.concept-card {
+  /* ★本体のベタ塗り背景を完全な透明にする（これで四角い輪郭が消えます） */
+  background-color: transparent !important;
+
+  /* ★影の広がりに内側（inset）も追加し、外側と内側の両方にふんわり色を乗せる */
+  box-shadow:
+    0 0 50px 50px #faf4e6,
+    /* 外側のぼかし */ inset 0 0 100px 80px #faf4e6; /* 内側のぼかし（これで中央も明るくなります） */
+
+  border: none !important;
+  border-radius: 40px; /* 輪郭をさらに柔らかく馴染ませる */
+  padding: 80px 30px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+/* 1行目：CONCEPT（金文字＆拡大） */
+.concept h2 {
+  font-size: 2.8rem; /* サイズ拡大 */
+  letter-spacing: 0.15em;
+  margin-bottom: 5px;
+  color: #c5a059; /* 上品なゴールド */
+  font-weight: bold;
+}
+
+/* 2行目：サブタイトル */
+.concept-subtitle {
+  font-size: 1.1rem;
+  color: #8c734b; /* 薄めのゴールドブラウン */
+  margin-bottom: 30px;
+}
+
+/* 3行目：メインキャッチ（金文字＆さらに拡大） */
+.concept-copy {
+  font-size: 1.8rem; /* 目立つ大きさに */
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #b8860b; /* ダークゴールド */
+}
+
+/* 4行目以降：説明文（変な広がりを抑えて中央に寄せる） */
+.concept-text {
+  line-height: 2.2;
+  font-size: 1rem;
+  color: #333;
+  max-width: 1200px; /* ★横幅を絞ることで変な広がりを解消 */
+  margin: 0 auto; /* 中央寄せ */
+}
+/* 4行目以降（説明文）の設定 */
+.concept-text {
+  text-align: left; /* ★左揃えにして文頭を揃える */
+  line-height: 2.2; /* 行間をゆったり取る */
+  font-size: 1rem;
+  color: #333;
+  max-width: 800px; /* 中央に寄せるための幅設定 */
+  margin: 0 auto; /* ブロック自体を画面中央に配置 */
+}
+/* CONCEPTセクション（完全なフェードアウト ＋ 幅調整） */
+.concept {
+  /* 中央の色を深みのあるゴールド（#f5eccb）にし、端（85%〜100%）にかけて完全透明（rgba(255,255,255,0)）へ広範囲に溶け込ませる */
+  background: radial-gradient(
+    ellipse at center,
+    #f5eccb 0%,
+    #f8f2d8 35%,
+    rgba(255, 255, 255, 0.8) 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border: none !important;
+  box-shadow: none !important;
+  padding: 60px 30px;
+
+  /* ★下カードの横幅クラス（.wrapper や .profile-card）と完璧に揃える設定 */
+  width: 100%;
+  max-width: 900px; /* 代表挨拶カードと同じ値に設定 */
+  margin: 50px auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* 各テキスト要素 */
+.concept h2 {
+  font-size: 2.2rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 5px;
+  color: #c5a059;
+  font-weight: bold;
+}
+
+.concept-subtitle {
+  font-size: 1rem;
+  color: #8c734b;
+  margin-bottom: 25px;
+}
+
+.concept-copy {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #b8860b;
+}
+
+.concept-text {
+  text-align: center;
+  line-height: 2.2;
+  font-size: 1.05rem;
+  color: #333;
+  margin: 0 auto;
+}
+/* 「アクセス」のボックスだけ、タイトルの強制高さを解除して自然な状態にする */
+.cafe-desc-box:first-child .cafe-rule-title {
+  height: auto !important;
+  min-height: auto !important;
+  margin-bottom: 10px;
+}
+.taikai {
+  color: #f70606f7;
+}
